@@ -1,0 +1,51 @@
+.button{
+    all:unset;
+    cursor:pointer;
+    &__round{
+        @extend .button;
+        color: white;        
+        border-radius: 40px;
+        padding: 5% 7%;
+        background-image: linear-gradient(color-default(secondary), color-default(primary));    
+        width: 56%;
+        max-width: 390px;
+        text-align: center;
+        font-size: 20px;
+        box-shadow: 0px 6px 10px 3px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s;
+        &:hover{
+            opacity: 80%;;
+            box-shadow: 0px 6px 10px 3px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05)
+        }
+        @include tablet{
+            padding: 4%;
+            max-width:320px;
+        }
+        @include desktop{
+            max-width: 320px;
+            padding: 2.5%;
+        }
+
+    }
+    &__like{
+        position: relative;
+        font-size: 35px;
+        line-height: 0;
+        .fa-regular{
+            color:black;
+        }
+        .fa-solid{
+            position: absolute;
+            left:0;
+            background: -webkit-linear-gradient(color-default(secondary), color-default(primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0;
+            transition: 300ms;
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+}

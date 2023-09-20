@@ -1,0 +1,31 @@
+section{
+    @include flexCenter(0px);
+    padding: 2%;
+}
+
+.location{
+    background-color: color-default(medium-grey);
+    height: 65px;
+    box-shadow: inset 0px 4px 3px 0px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+}
+
+.calling{
+    background-color: color-default(light-grey);
+    padding: 80px 10%;
+    @include flexCenter(50px,column);
+    .tagline{
+        text-align: center;
+        font-size: 22px;
+        font-weight: 300;
+        color:color-default(dark-grey);
+    }
+}
+.flow{
+    padding:50px 20px 95px 20px;
+}
+
+.restaurants{
+    background-color: color-default(light-grey);
+    padding:72px 20px;
+}

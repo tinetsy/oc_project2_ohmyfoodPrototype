@@ -1,0 +1,11 @@
+@function color-default($color_name){
+    @return map-get($color, $color_name)
+};
+
+@function color-darken($color_name,$amount){
+    @return darken(map-get($color, $color_name),$amount)
+};
+
+@function color-lighten($color_name,$amount){
+    @return lighten(map-get($color, $color_name),$amount)
+};
