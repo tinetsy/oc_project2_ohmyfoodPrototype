@@ -13,6 +13,8 @@ header{
             }
         }
         i{
+            -webkit-transition:0.2s;
+            -o-transition:0.2s;
             transition:0.2s;
         }
     }
