@@ -1,0 +1,289 @@
+@keyframes slideUp {
+    0% {
+      transform: translateY(30%);
+      opacity: 0%;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 100%;
+    }
+  }
+
+@for $i from 1 through 3{
+    .container--menuBox--#{$i}{
+     animation:calc(1100ms + $i*1000ms - 1000ms) ease-out 0s 1 slideUp;
+    }
+}
+
+.container{
+    width:100%;
+    @include flexCenter();
+
+    &--loader{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        animation-name: disappear;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        z-index: 99;
+        background-color: #fff;
+
+        .loader {
+            color: color-default(primary);
+            font-size: 45px;
+            text-indent: -9999em;
+            overflow: hidden;
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+            transform: translateZ(0);
+            animation: mltShdSpin 1.7s infinite ease, round 1.7s infinite ease;
+          }
+          
+          @keyframes mltShdSpin {
+            0% {
+              box-shadow: 0 -0.83em 0 -0.4em,
+              0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+              0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+            }
+            5%,
+            95% {
+              box-shadow: 0 -0.83em 0 -0.4em, 
+              0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 
+              0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+            }
+            10%,
+            59% {
+              box-shadow: 0 -0.83em 0 -0.4em, 
+              -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, 
+              -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+            }
+            20% {
+              box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em,
+               -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, 
+               -0.749em -0.34em 0 -0.477em;
+            }
+            38% {
+              box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em,
+               -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, 
+               -0.82em -0.09em 0 -0.477em;
+            }
+            100% {
+              box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 
+              0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+            }
+          }
+          
+          @keyframes round {
+            0% { transform: rotate(0deg) }
+            100% { transform: rotate(360deg) }
+          }
+           
+
+        @keyframes disappear {
+            0% {
+                display: flex;
+            }
+            90%{
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                display: none;
+            }
+            } 
+    }
+
+    &--location{
+        @include flexCenter(15px, row);
+    }
+
+    &--calling{
+        gap: 38px;
+    } 
+    
+    &--flow{
+        align-items: flex-start;
+        gap:40px
+    }
+
+    &--flowBox{
+        gap:30px;
+        align-items: center;
+        padding-left: 20px;
+        @include desktop{
+            @include flexCenter(48px,row);
+            align-items: stretch;
+        }
+    }
+
+    &--caption{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: end;
+    }
+
+    &--restaurants{
+        align-items: flex-start;
+        gap: 20px;
+       
+    }
+
+    &--restoCard{
+        gap: 22px;
+        @include desktop{
+            flex-flow:row wrap;
+            justify-content: space-around;
+        }
+    }
+
+
+    &--footer{
+        @include flexCenter(33px);
+        align-items: flex-start;
+    }
+
+    &--footerColumn{
+        @include flexCenter(18px);
+        align-items: flex-start;
+        
+    }
+    
+}
+
+.description{
+    font-size:20px;
+    font-weight: 300;
+    &--title{
+        font-size:24px;
+        font-weight: 500;
+        margin-bottom:10px;
+    }
+}
+
+
+
+.flowBox{
+    @include flexCenter(30px,row);
+    justify-content: flex-start ;
+    background-color: color-default(light-grey);
+    padding: 38px 48px;
+    border-radius: 28px;
+    width: 100%;
+    max-width: 450px;
+    font-size:20px ;
+    font-weight: 500;
+    box-shadow: 0px 6px 10px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    & .fa-solid{
+        font-size: 23px;
+        color: color-default(dark-grey);
+    }
+    &::before{
+        content:"";
+        border-radius: 50%;
+        position: absolute;
+        background-color: color-default(primary);
+        width:30px;
+        height:30px;
+        text-align: center;
+        line-height: 2rem;
+        color: white;
+        left: -15px;
+        font-weight: lighter;
+    }
+
+    @for $i from 1 through 3{
+        &:nth-child(#{$i})::before{
+            content: "#{$i}";
+        }
+    }
+
+    &--highlighted{
+        background-color: color-lighten(primary,35%);
+        
+        & .fa-solid{
+            color: color-default(primary);
+        }
+    }
+}
+
+
+
+.restoCard{
+    position: relative;
+    height:350px;
+    width:100%;
+    @include flexCenter;
+    @include desktop{
+        width: 45%;
+    }
+
+    .tag{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: #96e2d2;
+        display:none;
+        text-align: center;
+        font-size: 18px;
+        padding: 10px 36px;
+        color: #008f71;
+        border-radius: 3px;
+        font-weight: bold;
+        width:115px;
+    }
+
+    &__top{
+        width: 100%;
+        height:70%;
+        transition: 0.3s;
+
+        a{  
+            position: absolute;
+            top:0;
+            display: inline-block;
+            width: 100%;
+            height: inherit;
+            z-index: 999;
+        }
+
+        &:hover{
+                opacity: 0.5;
+        }
+
+        &--new{
+            .tag{
+                display: inline-block;
+            }
+        }
+    }
+    
+    &__bottom{
+        height:30%;
+        width:100%;
+        background-color: white;
+        border-bottom-left-radius:15px;
+        border-bottom-right-radius:15px;
+        @include flexCenter(0px,row);
+        padding:15px;
+        justify-content: space-between;
+
+        .description div:nth-child(2){
+            font-size: 22px;
+        }
+    }
+
+    img{
+        border-top-left-radius:15px;
+        border-top-right-radius:15px;
+        height:100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    
+    }
+
