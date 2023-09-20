@@ -1,0 +1,91 @@
+.logo__black{
+    padding-left: 4px ;
+    font-family: 'Shrikhand', cursive;
+    font-size: 40px;
+    color: black;
+ }
+
+ .menu{
+    padding:0;
+    position: relative;
+
+    .resto--banner{
+      width:100%;
+      height: 390px;
+      -o-object-fit: cover;
+         object-fit: cover;
+      @include desktop{
+        height:500px;
+      }
+    }
+  //   background-repeat: no-repeat;
+  //   background-size: 108%;
+  //   background-position: 59% 0%;
+  //   @include desktop{
+  //     background-size: 100%;
+  //     background-position-y: -150%;
+  // }
+
+  //   &--bastille{
+  //     background-image: url("../img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+     
+  //   }
+
+  //   &--leGourmand{
+  //     background-image: url("../img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+  //   }
+
+  //   &--theEnchantedPlate{
+  //     background-image: url("../img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+  //     @include desktop{
+  //       background-position-y: 50%;
+  //   }
+  //   }
+
+  //   &--theFullPalette{
+  //     background-image: url("../img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  //  }
+
+    .button__like{
+      padding-right:30px;
+    }
+
+    
+    .button__round{
+      display: block;
+      width:44%;
+      margin: 0 auto;
+      @include desktop{
+        padding: 2%;
+        max-width: 280px;
+    }
+    }
+ }
+
+ .submenu{
+   @include flexCenter;
+   width: 100%;
+   -webkit-box-align: start;
+       -ms-flex-align: start;
+           align-items: flex-start;
+   @include desktop{
+    width: 33%;
+    }
+  }
+
+ .submenu--title{
+    padding-left: 4px ;
+    font-size: 24px;
+    hr{
+        margin-top:8px;
+        margin-left: 0;
+        width: 55px;
+        border-width:0;
+        color: color-default(tertiary);
+        background-color: color-default(tertiary);;
+        height:4px;
+        
+     }
+ }
+ 
+ 

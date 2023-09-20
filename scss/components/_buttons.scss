@@ -6,17 +6,25 @@
         color: white;        
         border-radius: 40px;
         padding: 5% 7%;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(color-default(secondary)), to(color-default(primary)));
+        background-image: -o-linear-gradient(color-default(secondary), color-default(primary));
         background-image: linear-gradient(color-default(secondary), color-default(primary));    
         width: 56%;
         max-width: 390px;
         text-align: center;
         font-size: 20px;
-        box-shadow: 0px 6px 10px 3px rgba(0, 0, 0, 0.15);
+        -webkit-box-shadow: 0px 6px 10px 3px rgba(0, 0, 0, 0.15);
+                box-shadow: 0px 6px 10px 3px rgba(0, 0, 0, 0.15);
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
         transition: all 0.3s;
         &:hover{
             opacity: 80%;;
-            box-shadow: 0px 6px 10px 3px rgba(0, 0, 0, 0.3);
-            transform: scale(1.05)
+            -webkit-box-shadow: 0px 6px 10px 3px rgba(0, 0, 0, 0.3);;
+                    box-shadow: 0px 6px 10px 3px rgba(0, 0, 0, 0.3);
+            -webkit-transform: scale(1.05);
+                -ms-transform: scale(1.05);
+                    transform: scale(1.05)
         }
         @include tablet{
             padding: 4%;
@@ -42,6 +50,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             opacity: 0;
+            -webkit-transition: 300ms;
+            -o-transition: 300ms;
             transition: 300ms;
             &:hover{
                 opacity: 1;
