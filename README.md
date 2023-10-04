@@ -1,6 +1,6 @@
 # oc_project2_ohmyfoodPrototype
 
-visit live site at [https://tinetsy.github.io/oc_project1_bookiPrototype/](https://tinetsy.github.io/oc_project2_ohmyfoodPrototype/)
+visit live site at [https://tinetsy.github.io/oc_project2_ohmyfoodPrototype/](https://tinetsy.github.io/oc_project2_ohmyfoodPrototype/)
 
 Project Focus:
 - Set up a development environment
