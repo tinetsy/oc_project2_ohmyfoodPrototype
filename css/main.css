@@ -278,6 +278,7 @@ h1, h2 {
   font-weight: 500;
   box-shadow: 0px 6px 10px 3px rgba(0, 0, 0, 0.1);
   position: relative;
+  transition: 0.3s;
 }
 .flowBox .fa-solid {
   font-size: 23px;
@@ -305,10 +306,10 @@ h1, h2 {
 .flowBox:nth-child(3)::before {
   content: "3";
 }
-.flowBox--highlighted {
+.flowBox:hover {
   background-color: #f2eafb;
 }
-.flowBox--highlighted .fa-solid {
+.flowBox:hover .fa-solid {
   color: #9356DC;
 }
 

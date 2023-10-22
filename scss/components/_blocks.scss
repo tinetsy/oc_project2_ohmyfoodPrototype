@@ -356,6 +356,7 @@
     -webkit-box-shadow: 0px 6px 10px 3px rgba(0, 0, 0, 0.1);
             box-shadow: 0px 6px 10px 3px rgba(0, 0, 0, 0.1);
     position: relative;
+    transition: 0.3s;
 
     & .fa-solid{
         font-size: 23px;
@@ -381,9 +382,8 @@
         }
     }
 
-    &--highlighted{
+    &:hover{
         background-color: color-lighten(primary,35%);
-        
         & .fa-solid{
             color: color-default(primary);
         }
