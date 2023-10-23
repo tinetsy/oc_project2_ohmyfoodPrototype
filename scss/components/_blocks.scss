@@ -410,11 +410,11 @@
     position: relative;
     padding-right: 35px;
 
-    &:hover >.description{
+    &:hover >.description, &:active >.description{
         width:80%;
     }
 
-    &:hover >.selected{
+    &:hover >.selected, &:active >.selected{
         width:20%;
         i{
             transform: rotate(1turn);
