@@ -331,13 +331,13 @@ h1, h2 {
   position: relative;
   padding-right: 35px;
 }
-.menuBox:hover > .description {
+.menuBox:hover > .description, .menuBox:active > .description {
   width: 80%;
 }
-.menuBox:hover > .selected {
+.menuBox:hover > .selected, .menuBox:active > .selected {
   width: 20%;
 }
-.menuBox:hover > .selected i {
+.menuBox:hover > .selected i, .menuBox:active > .selected i {
   transform: rotate(1turn);
 }
 .menuBox .description {
